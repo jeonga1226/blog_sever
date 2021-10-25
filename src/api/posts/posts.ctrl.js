@@ -24,6 +24,7 @@ export const getPostById = async (ctx, next) => {
   }
 };
 
+
 /*
   POST /api/posts
   {
@@ -79,6 +80,7 @@ export const list = async ctx => {
 
   const { tag } = ctx.query;
   // tag, username 값이 유효하면 객체 안에 넣고, 그렇지 않으면 넣지 않음
+  console.log("tags   ",tags)
   const query = {
     ...(tag ? { tags: tag } : {}),
   };
@@ -105,19 +107,8 @@ export const list = async ctx => {
 /*
   GET /api/posts/:id
 */
-export const read = async ctx => {
+export const read = async (ctx) => {
   ctx.body = ctx.state.post;
-  // const { id } = ctx.params;
-  // try {
-  //   const post = await Post.findById(id).exec();
-  //   if (!post) {
-  //     ctx.status = 404; // Not Found
-  //     return;
-  //   }
-  //   ctx.body = post;
-  // } catch (e) {
-  //   ctx.throw(500, e);
-  // }
 };
 
 /*

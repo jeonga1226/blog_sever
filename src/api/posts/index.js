@@ -8,9 +8,9 @@ posts.post('/', postsCtrl.write);
 
 const post = new Router(); // /api/posts/:id
 post.get('/', postsCtrl.read);
-post.delete('/', postsCtrl.remove);
-post.patch('/', postsCtrl.update);
+post.delete('/',  postsCtrl.remove);
+post.patch('/',  postsCtrl.update);
 
-posts.use('/:id', postsCtrl.getPostById, post.routes());
+posts.use('/:id', postsCtrl.getPostById,  post.routes());
 
 export default posts;

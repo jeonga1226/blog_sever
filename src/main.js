@@ -76,7 +76,7 @@ app.use(router.routes()).use(router.allowedMethods());
 // })
 
 // 포트가 지정되어 있지 않다면 4000 사용
-const port = PORT || 4000;
+const port = PORT || 5000;
 app.listen(port, () => {
     console.log('Listening to port %d', port);
 })
